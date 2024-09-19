@@ -25,6 +25,7 @@ return {
 
       overrides = function(colors)
         local theme = colors.theme
+
         return {
           NormalFloat = { bg = 'none' },
           FloatBorder = { bg = 'none' },
@@ -43,6 +44,8 @@ return {
           PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2 },
           PmenuSbar = { bg = theme.ui.bg_m1 },
           PmenuThumb = { bg = theme.ui.bg_p2 },
+          -- For visulal selection
+          Visual = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
         }
       end,
     }
