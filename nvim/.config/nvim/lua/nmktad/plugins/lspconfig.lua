@@ -169,28 +169,25 @@ return {
       -- for many setups, the LSP (`tsserver`) will work just fine
       -- but check this if it's good. https://github.com/pmizio/typescript-tools.nvim
       ts_ls = {},
-      -- biome = {
-      --   cmd = { 'biome', 'lsp-proxy' },
-      --   filetypes = {
-      --     'javascript',
-      --     'javascriptreact',
-      --     'json',
-      --     'jsonc',
-      --     'typescript',
-      --     'typescript.tsx',
-      --     'typescriptreact',
-      --     'astro',
-      --     'svelte',
-      --     'vue',
-      --     'css',
-      --   },
-      --   root_dir = function(fname)
-      --     return util.root_pattern('biome.json', 'biome.jsonc')(fname)
-      --       or util.find_package_json_ancestor(fname)
-      --       or util.find_node_modules_ancestor(fname)
-      --       or util.find_git_ancestor(fname)
-      --   end,
-      -- },
+      biome = {
+        cmd = { 'biome', 'lsp-proxy' },
+        filetypes = {
+          'javascript',
+          'javascriptreact',
+          'json',
+          'jsonc',
+          'typescript',
+          'typescript.tsx',
+          'typescriptreact',
+          'astro',
+          'svelte',
+          'vue',
+          'css',
+        },
+        root_dir = function(fname)
+          return util.root_pattern('biome.json', 'biome.jsonc')(fname)
+        end,
+      },
 
       lua_ls = {
         -- cmd = {...},
