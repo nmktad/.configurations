@@ -39,6 +39,7 @@
           # { name = "b4b4r07/zsh-vimode-visual"; }
         ];
       };
+
       oh-my-zsh = {
         enable = true;
         plugins = [

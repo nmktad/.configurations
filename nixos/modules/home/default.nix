@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../programs/tui
+    ../programs
   ];
 
   nixpkgs = {
@@ -14,7 +14,6 @@
 
   nixpkgs.overlays = [
     inputs.nur.overlay
-    inputs.nix-vscode-extensions.overlays.default
   ];
 
   # User packages. IE not system packages

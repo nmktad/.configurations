@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ../../common
+    ../../modules/common
   ];
 
-  networking.hostName = "foundation";
+  networking.hostName = "local";
 
   # Ensure both users exist during transition
   users.users = {
@@ -56,7 +56,8 @@
       inherit inputs outputs vars;
     };
     users.${vars.user.name} = { pkgs, ... }: {
-      imports = [ ../../../modules/home ];
+      imports = [ ../../modules/home ];
     };
   };
 }
+{ inputs, outputs, lib, config, pkgs, vars, ... }:
