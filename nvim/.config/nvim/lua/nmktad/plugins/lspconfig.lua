@@ -155,6 +155,8 @@ return {
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+
+    local util = require 'lspconfig.util'
     local servers = {
       clangd = {},
       gopls = {},
@@ -166,7 +168,26 @@ return {
       --
       -- for many setups, the LSP (`tsserver`) will work just fine
       -- but check this if it's good. https://github.com/pmizio/typescript-tools.nvim
-      tsserver = {},
+      ts_ls = {},
+      biome = {
+        cmd = { 'biome', 'lsp-proxy' },
+        filetypes = {
+          'javascript',
+          'javascriptreact',
+          'json',
+          'jsonc',
+          'typescript',
+          'typescript.tsx',
+          'typescriptreact',
+          'astro',
+          'svelte',
+          'vue',
+          'css',
+        },
+        root_dir = function(fname)
+          return util.root_pattern('biome.json', 'biome.jsonc')(fname)
+        end,
+      },
 
       lua_ls = {
         -- cmd = {...},

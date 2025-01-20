@@ -17,10 +17,19 @@ return { -- Autoformat
       lua = { 'stylua' },
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      javascript = { { 'prettierd', 'prettier' } },
+      javascript = { 'prettierd' },
+      typescript = { 'prettierd' },
+      javascriptreact = { 'prettierd' },
+      typescriptreact = { 'prettierd' },
 
       -- Conform will run multiple formatters sequentially
-      go = { 'goimports', 'gofmt' },
+      go = { 'goimports', 'gofumpt', 'gopls' },
+
+      -- JSON formatter using jq
+      json = { 'jq' },
+
+      --  Dockerfile formatter using hadolint
+      dockerfile = { 'hadolint' },
 
       -- You can also customize some of the format options for the filetype
       rust = { 'rustfmt', lsp_format = 'fallback' },
