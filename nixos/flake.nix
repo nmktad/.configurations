@@ -24,11 +24,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
-      url = "github:mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,18 +41,19 @@
           users.${vars.user.name} = {};
         };
       };
+
     in
     {
       nixosConfigurations = {
         local = nixpkgs.lib.nixosSystem {
           specialArgs = {
+	    system = "x86_64-linux";
             inherit inputs vars;
             outputs = self;
           };
           modules = [
 	    nixos-wsl.nixosModules.default
-            nixos-hardware.nixosModules.asus-zephyrus-ga503
-            ./hosts/foundation
+            ./hosts/local
             inputs.stylix.nixosModules.stylix
             inputs.home-manager.nixosModules.home-manager
             mkHomeManagerModule
@@ -65,4 +61,4 @@
         };
       };
     };
-}
+};
