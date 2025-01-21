@@ -23,8 +23,14 @@
     packages = with pkgs; [
       ollama
       ripgrep
+      starship
       go
     ];
+
+    file.".config/nvim" = {
+      source = "${inputs.dotfiles}/nvim/.config/nvim";
+      recursive = true;
+    };
   };
 
   programs.home-manager.enable = true;

@@ -54,7 +54,10 @@
         ll = "ls -l";
       };
 
+
       history.size = 10000;
       history.path = "/home/${vars.user.name}/.zsh_history";
     };
+
+    programs.starship.enable = true;
 }

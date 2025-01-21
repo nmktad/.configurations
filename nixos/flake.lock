@@ -66,6 +66,22 @@
         "type": "github"
       }
     },
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737452581,
+        "narHash": "sha256-/hScm0jsaOioo93+WJHjC53wrIHo8jXch6tgJNyc5lY=",
+        "ref": "refs/heads/main",
+        "rev": "3c9d7b05d928df90f8805296c321cd0f5be33a44",
+        "revCount": 14,
+        "type": "git",
+        "url": "https://github.com/nmktad/.dotfiles.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/nmktad/.dotfiles.git"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -421,6 +437,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",

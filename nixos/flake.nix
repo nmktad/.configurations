@@ -15,9 +15,14 @@
     stylix.url = "github:danth/stylix/release-24.11";
 
     nur.url = "github:nix-community/NUR";
+
+    dotfiles = {
+      url = "git+https://github.com/nmktad/.dotfiles.git";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-wsl, nixos-hardware, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-wsl, nixos-hardware, home-manager, dotfiles, ... }:
     let
       vars = import ./config/vars.nix { inherit (nixpkgs) lib; };
 

@@ -3,7 +3,7 @@ rec {
   user = {
     name = "nmktad";
     fullName = "Nathnael Mekonnen";
-    email = "nmktad@gmail.com";
+    email = "nmktadesse@gmail.com";
     packages = {
       editor = "nvim";
       shell = "zsh"; 

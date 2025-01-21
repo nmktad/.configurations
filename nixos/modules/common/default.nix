@@ -51,26 +51,6 @@
 
   virtualisation.docker.enable = true;
 
-  services = {
-    xserver.enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
-
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-  };
-
-  security.rtkit.enable = true;
-
   users.users.${vars.user.name} = {
     initialPassword = "password";
     isNormalUser = true;
@@ -97,6 +77,9 @@
       wget
       curl
       neofetch
+      nodejs
+      pnpm
+      bun
       tree
       just
       gcc
