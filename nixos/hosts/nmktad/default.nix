@@ -19,7 +19,7 @@
       initialPassword = "password";
     };
   };
-  
+
   # Override common settings that don't work well in WSL
   services = {
     xserver.enable = lib.mkForce false;
@@ -59,4 +59,3 @@
     };
   };
 }
-{ inputs, outputs, lib, config, pkgs, vars, ... }:

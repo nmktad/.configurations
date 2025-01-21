@@ -30,7 +30,7 @@
 
   networking.networkmanager.enable = true;
 
-  time.timeZone = vars.system.timeZone; 
+  time.timeZone = vars.system.timeZone;
 
   i18n = {
     defaultLocale = vars.system.locale;
