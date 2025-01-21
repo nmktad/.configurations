@@ -2,3 +2,8 @@
 # Usage: $ deploy host <host name>
 deploy host:
   sudo nixos-rebuild switch --flake .#{{host}}
+
+# Debug deployment to a specific host
+# Usage: $ debug host <host name>
+debug host:
+  sudo nixos-rebuild switch --flake .#{{host}} --show-trace --verbose
