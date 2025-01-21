@@ -78,6 +78,7 @@
       curl
       neofetch
       nodejs
+      ansible
       pnpm
       bun
       tree
