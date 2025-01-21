@@ -22,6 +22,7 @@
   nixpkgs = {
     overlays = [
       inputs.nur.overlay
+      inputs.nix-vscode-extensions.overlays.default
     ];
     config = {
       allowUnfree = true;
@@ -50,6 +51,26 @@
   programs.nix-ld.enable = true;
 
   virtualisation.docker.enable = true;
+
+  services = {
+    xserver.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+  };
+
+  security.rtkit.enable = true;
 
   users.users.${vars.user.name} = {
     initialPassword = "password";
