@@ -1,5 +1,4 @@
 { inputs, outputs, lib, config, pkgs, vars, ... }:
-
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -73,13 +72,12 @@
       rsync
       tldr
       neovim
+      zip
       unzip
       wget
       curl
-      zip
       neofetch
       tree
-      ncdu
       just
       gcc
       lazygit

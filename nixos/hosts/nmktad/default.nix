@@ -1,11 +1,10 @@
 { inputs, outputs, lib, config, pkgs, vars, ... }:
-
 {
   imports = [
     ../../modules/common
   ];
 
-  networking.hostName = "local";
+  networking.hostName = "nmktad";
 
   # Ensure both users exist during transition
   users.users = {

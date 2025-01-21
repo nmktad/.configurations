@@ -24,6 +24,7 @@
       ollama
       ripgrep
       go
+    ]
   };
 
   programs.home-manager.enable = true;

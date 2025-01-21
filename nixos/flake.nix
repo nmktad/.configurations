@@ -6,7 +6,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     systems.url = "github:nix-systems/default-linux";
-
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
@@ -20,7 +19,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -32,7 +31,7 @@
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-wsl, nixos-hardware, home-manager, ... }:
     let
-      vars = import ./variables.nix { inherit (nixpkgs) lib; };
+      vars = import ./config/vars.nix { inherit (nixpkgs) lib; };
 
       mkHomeManagerModule = { config, ... }: {
         home-manager = {
@@ -45,15 +44,15 @@
     in
     {
       nixosConfigurations = {
-        local = nixpkgs.lib.nixosSystem {
+        nmktad = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = {
-	    system = "x86_64-linux";
             inherit inputs vars;
             outputs = self;
           };
           modules = [
-	    nixos-wsl.nixosModules.default
-            ./hosts/local
+            nixos-wsl.nixosModules.default
+            ./hosts/nmktad
             inputs.stylix.nixosModules.stylix
             inputs.home-manager.nixosModules.home-manager
             mkHomeManagerModule
@@ -61,4 +60,4 @@
         };
       };
     };
-};
+}

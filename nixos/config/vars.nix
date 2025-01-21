@@ -13,6 +13,7 @@ rec {
   paths = {
     dotfiles = "$HOME/.dotfiles";
     configHome = "$HOME/.config";
+    scriptsHome = "$HOME/.local/scripts";
     dataHome = "$HOME/.local/share";
     cacheHome = "$HOME/.cache";
   };
